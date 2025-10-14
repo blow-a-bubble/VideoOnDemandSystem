@@ -1,0 +1,14 @@
+syntax = "proto3";
+ package example;
+//默认情况protoc命令并不会针对ervice服务⽣成对应rpc代码
+//需要开启选项才会进⾏⽣成
+ 
+option cc_generic_services = true;
+// 定义⼀个消息
+message Person {
+ optional string name = 1;
+ optional int32 age = 2;
+ optional string email = 3;
+ repeated string skills = 4;
+ map<string, float> scores = 5;
+ }

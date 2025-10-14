@@ -1,0 +1,20 @@
+syntax = "proto3";
+package example;
+option cc_generic_services = true;
+
+
+message CalRequest
+{
+    int32 left = 1;
+    int32 right = 2;
+}
+
+message CalResponse
+{
+    int32 result = 1;
+}
+
+service CalService
+{
+    rpc Add(CalRequest) returns (CalResponse);
+}

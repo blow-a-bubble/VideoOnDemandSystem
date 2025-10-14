@@ -1,0 +1,38 @@
+[18:11:42 +08:00] [default-logger] [---I---] [thread 152917] [../../source/rpc.cc:34  ] 启动服务成功, 端口: 9000
+[18:16:27 +08:00] [default-logger] [---D---] [thread 158239] [../../source/rpc.cc:141 ] 添加EchoService-127.0.0.1:9000服务成功
+[18:16:27 +08:00] [default-logger] [---D---] [thread 158247] [test_client.cc:32  ] 收到响应: hello brpc
+[18:17:42 +08:00] [default-logger] [---I---] [thread 159617] [../../source/rpc.cc:34  ] 启动服务成功, 端口: 9000
+[18:17:47 +08:00] [default-logger] [---D---] [thread 159720] [../../source/rpc.cc:141 ] 添加EchoService-127.0.0.1:9000服务成功
+[18:17:47 +08:00] [default-logger] [---D---] [thread 159731] [test_client.cc:32  ] 收到响应: hello brpc
+[18:20:04 +08:00] [default-logger] [---D---] [thread 162002] [../../source/rpc.cc:141 ] 添加EchoService-127.0.0.1:9000服务成功
+[18:20:04 +08:00] [default-logger] [---D---] [thread 162002] [test_client.cc:47  ] 收到响应: hello brpc
+[18:20:20 +08:00] [default-logger] [---D---] [thread 162337] [../../source/rpc.cc:141 ] 添加EchoService-127.0.0.1:9000服务成功
+[18:20:20 +08:00] [default-logger] [---D---] [thread 162337] [test_client.cc:47  ] 收到响应: hello brpc
+[18:22:35 +08:00] [default-logger] [---I---] [thread 164829] [../../source/rpc.cc:34  ] 启动服务成功, 端口: 9000
+[18:22:40 +08:00] [default-logger] [---D---] [thread 164949] [../../source/rpc.cc:141 ] 添加EchoService-127.0.0.1:9000服务成功
+[18:22:40 +08:00] [default-logger] [---D---] [thread 164838] [test_server.cc:11  ] 收到请求: hello brpc
+[18:22:40 +08:00] [default-logger] [---D---] [thread 164949] [test_client.cc:48  ] 收到响应: hello brpc
+[18:24:02 +08:00] [default-logger] [---D---] [thread 166458] [../../source/rpc.cc:141 ] 添加EchoService-127.0.0.1:9000服务成功
+[18:24:02 +08:00] [default-logger] [---D---] [thread 164836] [test_server.cc:11  ] 收到请求: hello brpc
+[18:24:02 +08:00] [default-logger] [---D---] [thread 166458] [test_client.cc:48  ] 收到响应: hello brpc
+[18:28:38 +08:00] [default-logger] [---D---] [thread 170767] [../../source/rpc.cc:141 ] 添加EchoService-127.0.0.1:9000服务成功
+[18:28:38 +08:00] [default-logger] [---D---] [thread 164838] [test_server.cc:11  ] 收到请求: hello brpc
+[18:28:38 +08:00] [default-logger] [---D---] [thread 170767] [test_client.cc:48  ] 收到响应: hello brpc
+[18:30:25 +08:00] [default-logger] [---D---] [thread 171467] [../../source/rpc.cc:141 ] 添加EchoService-127.0.0.1:9000服务成功
+[18:30:25 +08:00] [default-logger] [---D---] [thread 164836] [test_server.cc:11  ] 收到请求: hello brpc
+[18:30:25 +08:00] [default-logger] [---D---] [thread 171467] [test_client.cc:49  ] 收到响应: hello brpc
+[18:32:07 +08:00] [default-logger] [---D---] [thread 172124] [../../source/rpc.cc:141 ] 添加EchoService-127.0.0.1:9000服务成功
+[18:32:07 +08:00] [default-logger] [---E---] [thread 172124] [test_client.cc:45  ] 请求失败: [E111]Fail to connect Socket{id=0 addr=127.0.0.1:9000} (0x0x555556ac88f0): Connection refused [R1][E112]Not connected to 127.0.0.1:9000 yet, server_id=0 [R2][E112]Not connected to 127.0.0.1:9000 yet, server_id=0 [R3][E112]Not connected to 127.0.0.1:9000 yet, server_id=0
+[18:32:16 +08:00] [default-logger] [---I---] [thread 172248] [../../source/rpc.cc:34  ] 启动服务成功, 端口: 9000
+[18:32:20 +08:00] [default-logger] [---D---] [thread 172299] [../../source/rpc.cc:141 ] 添加EchoService-127.0.0.1:9000服务成功
+[18:32:20 +08:00] [default-logger] [---D---] [thread 172255] [test_server.cc:11  ] 收到请求: hello brpc
+[18:32:20 +08:00] [default-logger] [---D---] [thread 172299] [test_client.cc:49  ] 收到响应: hello brpc
+[18:32:50 +08:00] [default-logger] [---D---] [thread 172535] [../../source/rpc.cc:141 ] 添加EchoService-127.0.0.1:9000服务成功
+[18:32:52 +08:00] [default-logger] [---D---] [thread 172260] [test_server.cc:11  ] 收到请求: hello brpc
+[18:32:56 +08:00] [default-logger] [---D---] [thread 172535] [test_client.cc:49  ] 收到响应: hello brpc
+[18:33:26 +08:00] [default-logger] [---D---] [thread 172879] [../../source/rpc.cc:141 ] 添加EchoService-127.0.0.1:9000服务成功
+[18:33:26 +08:00] [default-logger] [---D---] [thread 172260] [test_server.cc:11  ] 收到请求: hello brpc
+[18:33:26 +08:00] [default-logger] [---D---] [thread 172879] [test_client.cc:49  ] 收到响应: hello brpc
+[18:36:08 +08:00] [default-logger] [---D---] [thread 173705] [../../source/rpc.cc:141 ] 添加EchoService-127.0.0.1:9000服务成功
+[18:36:08 +08:00] [default-logger] [---D---] [thread 172256] [test_server.cc:11  ] 收到请求: hello brpc
+[18:36:08 +08:00] [default-logger] [---D---] [thread 173705] [test_client.cc:53  ] 收到响应: hello brpc

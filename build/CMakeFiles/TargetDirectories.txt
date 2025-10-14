@@ -1,0 +1,4 @@
+/home/dev/workspace/VideoOnDemandSystem/build/CMakeFiles/discovery_test.dir
+/home/dev/workspace/VideoOnDemandSystem/build/CMakeFiles/registry_test.dir
+/home/dev/workspace/VideoOnDemandSystem/build/CMakeFiles/edit_cache.dir
+/home/dev/workspace/VideoOnDemandSystem/build/CMakeFiles/rebuild_cache.dir
