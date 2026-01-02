@@ -16,5 +16,6 @@
 namespace bubble
 {
     extern std::shared_ptr<spdlog::logger> default_logger;
-    void init_logger(bool debug_enable, const std::string &file, spdlog::level::level_enum level);
+    // 默认参数 true async.log debug
+    void init_logger(bool debug_enable = true, const std::string &file = "async.log", spdlog::level::level_enum level = spdlog::level::level_enum::debug);
 }

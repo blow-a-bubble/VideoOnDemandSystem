@@ -1,2 +1,0 @@
-# Hashes of file build rules.
-fe2556232658d0bb867ebb4c3a9b69f9 cal.pb.cc

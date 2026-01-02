@@ -1,4 +1,4 @@
-# Install script for directory: /home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/etcd_rpc
+# Install script for directory: /home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/elastic
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

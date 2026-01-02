@@ -1,62 +1,22 @@
 [
 {
   "directory": "/home/dev/workspace/VideoOnDemandSystem/build",
-  "command": "/usr/bin/g++  -I/home/dev/workspace/VideoOnDemandSystem/build -g -o CMakeFiles/discovery_test.dir/cal.pb.cc.o -c /home/dev/workspace/VideoOnDemandSystem/build/cal.pb.cc",
-  "file": "/home/dev/workspace/VideoOnDemandSystem/build/cal.pb.cc"
+  "command": "/usr/bin/g++ -g -o CMakeFiles/ES.dir/es_test.cc.o -c /home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/elastic/es_test.cc",
+  "file": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/elastic/es_test.cc"
 },
 {
   "directory": "/home/dev/workspace/VideoOnDemandSystem/build",
-  "command": "/usr/bin/g++  -I/home/dev/workspace/VideoOnDemandSystem/build -g -o CMakeFiles/discovery_test.dir/discovery.cc.o -c /home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/etcd_rpc/discovery.cc",
-  "file": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/etcd_rpc/discovery.cc"
+  "command": "/usr/bin/g++ -g -o CMakeFiles/ES.dir/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/elastic.cc.o -c /home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/elastic.cc",
+  "file": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/elastic.cc"
 },
 {
   "directory": "/home/dev/workspace/VideoOnDemandSystem/build",
-  "command": "/usr/bin/g++  -I/home/dev/workspace/VideoOnDemandSystem/build -g -o CMakeFiles/discovery_test.dir/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/etcd.cc.o -c /home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/etcd.cc",
-  "file": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/etcd.cc"
-},
-{
-  "directory": "/home/dev/workspace/VideoOnDemandSystem/build",
-  "command": "/usr/bin/g++  -I/home/dev/workspace/VideoOnDemandSystem/build -g -o CMakeFiles/discovery_test.dir/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/logger.cc.o -c /home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/logger.cc",
-  "file": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/logger.cc"
-},
-{
-  "directory": "/home/dev/workspace/VideoOnDemandSystem/build",
-  "command": "/usr/bin/g++  -I/home/dev/workspace/VideoOnDemandSystem/build -g -o CMakeFiles/discovery_test.dir/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/util.cc.o -c /home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/util.cc",
+  "command": "/usr/bin/g++ -g -o CMakeFiles/ES.dir/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/util.cc.o -c /home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/util.cc",
   "file": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/util.cc"
 },
 {
   "directory": "/home/dev/workspace/VideoOnDemandSystem/build",
-  "command": "/usr/bin/g++  -I/home/dev/workspace/VideoOnDemandSystem/build -g -o CMakeFiles/discovery_test.dir/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/rpc.cc.o -c /home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/rpc.cc",
-  "file": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/rpc.cc"
-},
-{
-  "directory": "/home/dev/workspace/VideoOnDemandSystem/build",
-  "command": "/usr/bin/g++  -I/home/dev/workspace/VideoOnDemandSystem/build -g -o CMakeFiles/registry_test.dir/cal.pb.cc.o -c /home/dev/workspace/VideoOnDemandSystem/build/cal.pb.cc",
-  "file": "/home/dev/workspace/VideoOnDemandSystem/build/cal.pb.cc"
-},
-{
-  "directory": "/home/dev/workspace/VideoOnDemandSystem/build",
-  "command": "/usr/bin/g++  -I/home/dev/workspace/VideoOnDemandSystem/build -g -o CMakeFiles/registry_test.dir/registry.cc.o -c /home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/etcd_rpc/registry.cc",
-  "file": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/etcd_rpc/registry.cc"
-},
-{
-  "directory": "/home/dev/workspace/VideoOnDemandSystem/build",
-  "command": "/usr/bin/g++  -I/home/dev/workspace/VideoOnDemandSystem/build -g -o CMakeFiles/registry_test.dir/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/etcd.cc.o -c /home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/etcd.cc",
-  "file": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/etcd.cc"
-},
-{
-  "directory": "/home/dev/workspace/VideoOnDemandSystem/build",
-  "command": "/usr/bin/g++  -I/home/dev/workspace/VideoOnDemandSystem/build -g -o CMakeFiles/registry_test.dir/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/logger.cc.o -c /home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/logger.cc",
+  "command": "/usr/bin/g++ -g -o CMakeFiles/ES.dir/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/logger.cc.o -c /home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/logger.cc",
   "file": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/logger.cc"
-},
-{
-  "directory": "/home/dev/workspace/VideoOnDemandSystem/build",
-  "command": "/usr/bin/g++  -I/home/dev/workspace/VideoOnDemandSystem/build -g -o CMakeFiles/registry_test.dir/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/util.cc.o -c /home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/util.cc",
-  "file": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/util.cc"
-},
-{
-  "directory": "/home/dev/workspace/VideoOnDemandSystem/build",
-  "command": "/usr/bin/g++  -I/home/dev/workspace/VideoOnDemandSystem/build -g -o CMakeFiles/registry_test.dir/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/rpc.cc.o -c /home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/rpc.cc",
-  "file": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/source/rpc.cc"
 }
 ]

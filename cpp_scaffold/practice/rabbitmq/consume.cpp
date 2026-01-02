@@ -1,61 +1,51 @@
 #include <ev.h>
 #include <amqpcpp.h>
 #include <amqpcpp/libev.h>
-#include <openssl/ssl.h>
-#include <openssl/opensslv.h>
-#include <thread>
 int main()
 {
-    // 1.创建网络库对象
+    // 创建 libev loop
     auto *loop = EV_DEFAULT;
 
-    // 2.将ev网络库与rabbitmq结合起来
+    // 创建 AMQP handler（AMQP-CPP 官方提供）
     AMQP::LibEvHandler handler(loop);
-
-    // 3.建立连接
-    AMQP::Address address("amqp://root:Zyk200388@localhost:5672/");
-    AMQP::TcpConnection con(&handler, address);
-
-    // 4.创建Channel信道
-    AMQP::TcpChannel channel(&con);
-
-    // 5.创建交换机
-    channel.declareExchange("test-exchange", AMQP::ExchangeType::direct, AMQP::autodelete)
-        .onSuccess([](){
-            std::cout << "test-exchange交换机创建成功" << std::endl;
-        })
-        .onError([](const char *message){
-            std::cout << "test-exchange交换机创建失败: " << message << std::endl;
-        });
     
-    // 6.创建队列
-    channel.declareQueue("test-queue")
-        .onSuccess([](){
-            std::cout << "test-queue队列创建成功" << std::endl;
-        })
-        .onError([](const char *message){
-            std::cout << "test-queue队列创建失败: " << message << std::endl;
+    // 创建连接
+    AMQP::Address address("amqp://admin:Zyk200388@dev-rabbitmq/");
+    AMQP::TcpConnection connection(&handler, address);
+
+    // 创建通道
+    AMQP::TcpChannel channel(&connection);
+
+    // 创建交换机
+    channel.declareExchange("test_exchange", AMQP::direct).onSuccess([&]() {
+        std::cout << "Exchange declared successfully" << std::endl;
+
+        // 创建队列
+        channel.declareQueue("test_queue").onSuccess([&]() {
+            std::cout << "Queue declared successfully" << std::endl;
+
+            // 绑定队列到交换机
+            channel.bindQueue("test_exchange", "test_queue", "test_routing_key").onSuccess([&]() {
+                std::cout << "Queue bound to exchange successfully" << std::endl;
+
+                // 消费数据
+                channel.consume("test_queue").onReceived([&](const AMQP::Message &message, uint64_t deliveryTag, bool redelivered) {
+                    std::string msgContent(message.body(), message.bodySize());
+                    std::cout << "Received message: " << msgContent << std::endl;
+
+                    // 确认消息已处理
+                    channel.ack(deliveryTag);
+                });
+            }).onError([](const char *message) {
+                std::cerr << "Failed to bind queue: " << message << std::endl;
+            });
+        }).onError([](const char *message) {
+            std::cerr << "Failed to declare queue: " << message << std::endl;
         });
-    // 7.将交换机和队列绑定
-    channel.bindQueue("test-exchange", "test-queue", "test-queue-key")
-        .onSuccess([](){
-            std::cout << "[test-exchange]--[test-queue]路由器和队列绑定成功" << std::endl;
-        })
-        .onError([](const char *message){
-            std::cout << "[test-exchange]--[test-queue]路由器和队列绑定失败: " << message << std::endl;
-        });
-    // 8.消费订阅
-    channel.consume("test-queue")
-        .onMessage([&channel](const AMQP::Message &message, uint64_t deliveryTag, bool redelivered){
-            std::string body;
-            body.assign(message.body(), message.bodySize());
-            std::cout << "消费数据: " << body << std::endl; 
-            channel.ack(deliveryTag);
-        })
-        .onError([](const char *message){
-            std::cout << "消费数据失败: " << message << std::endl;
-        });
-    
+    }).onError([](const char *message) {
+        std::cerr << "Failed to declare exchange: " << message << std::endl;
+    });
+    // 运行事件循环
     ev_run(loop, 0);
     return 0;
 }

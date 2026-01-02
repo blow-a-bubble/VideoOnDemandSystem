@@ -78,6 +78,18 @@
         "typeinfo": "cpp",
         "variant": "cpp"
     },
-    "cmake.sourceDirectory": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/etcd_rpc",
-    "cmake.ignoreCMakeListsMissing": true
+    // "cmake.sourceDirectory": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/rabbitmq/",
+    // "cmake.sourceDirectory": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/practice/rabbitmq/",
+    // "cmake.sourceDirectory": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/practice/fastdfs/",
+    // "cmake.sourceDirectory": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/fastdfs/",
+    // "cmake.sourceDirectory": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/practice/redis/",
+    // "cmake.sourceDirectory": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/redis/",
+    // "cmake.sourceDirectory": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/practice/odb/test3",
+    // "cmake.sourceDirectory": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/practice/odb/limit",
+    // "cmake.sourceDirectory": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/odb/",
+    "cmake.sourceDirectory": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/elastic/",
+
+    "cmake.ignoreCMakeListsMissing": true,
+    //设置默认生成器为 Ninja
+    "cmake.generator": "Ninja"
 }
