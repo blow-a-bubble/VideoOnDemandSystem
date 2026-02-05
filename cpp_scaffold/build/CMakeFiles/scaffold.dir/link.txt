@@ -1,2 +1,0 @@
-/usr/bin/ar qc lib/libscaffold.a CMakeFiles/scaffold.dir/source/elastic.cc.o CMakeFiles/scaffold.dir/source/etcd.cc.o CMakeFiles/scaffold.dir/source/fastdfs.cc.o CMakeFiles/scaffold.dir/source/ffmpeg.cc.o CMakeFiles/scaffold.dir/source/logger.cc.o CMakeFiles/scaffold.dir/source/mail.cc.o CMakeFiles/scaffold.dir/source/odb.cc.o CMakeFiles/scaffold.dir/source/rabbitmq.cc.o CMakeFiles/scaffold.dir/source/redis.cc.o CMakeFiles/scaffold.dir/source/rpc.cc.o CMakeFiles/scaffold.dir/source/util.cc.o
-/usr/bin/ranlib lib/libscaffold.a
