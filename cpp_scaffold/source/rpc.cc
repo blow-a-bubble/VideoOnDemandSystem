@@ -50,12 +50,25 @@ namespace bubble
         }
         int index = _next;
         ++_next %= _channels.size();
-        return _channels[index];
+        return _channels[index].second;
     }
+    std::optional<std::string> ServiceChannel::getHost()
+    {
+        // RR轮转
+        std::lock_guard<std::mutex> lock(_mutex);
+        if (_channels.empty())
+        {
+            return std::nullopt;
+        }
+        int index = _next;
+        ++_next %= _channels.size();
+        return _channels[index].first;
+    }
+
     void ServiceChannel::append(const std::string &host)
     {
         brpc::ChannelOptions options;
-        options.timeout_ms = -1;   // 超时时间
+        options.timeout_ms = 30000;   // 超时时间
         options.max_retry = 3;     // 重试次数
         ChannelPtr channel = std::make_shared<brpc::Channel>();
         auto ret = channel->Init(host.c_str(), &options);
@@ -65,27 +78,19 @@ namespace bubble
             return;
         }
         std::lock_guard<std::mutex> lock(_mutex);
-        _channels.push_back(channel);
-        _map.emplace(host, channel);
+        _channels.emplace_back(host, channel);
     }
     void ServiceChannel::remove(const std::string &host)
     {
         std::lock_guard<std::mutex> lock(_mutex);
-        auto it = _map.find(host);
-        if (it == _map.end())
-        {
-            WARN__LOG("删除信道{}-{}识别, 该信道不存在", _service_name, host);
-            return;
-        }
         for (auto vit = _channels.begin(); vit != _channels.end(); ++vit)
         {
-            if (*vit == it->second)
+            if (vit->first == host)
             {
                 _channels.erase(vit);
                 break;
             }
         }
-        _map.erase(it);
     }
 
     ChannelPtr ServiceManager::choose(const std::string &service_name)
@@ -102,6 +107,24 @@ namespace bubble
         {
             ERROR__LOG("没有提供{}服务的节点了", service_name);
             return ChannelPtr();
+        }
+        return ret;
+    }
+
+    std::optional<std::string> ServiceManager::getServiceHost(const std::string &service_name)
+    {
+        std::lock_guard<std::mutex> lock(_mutex);
+        auto it = _services.find(service_name);
+        if (it == _services.end())
+        {
+            ERROR__LOG("没有注册该服务: {}", service_name);
+            return std::nullopt;
+        }
+        auto ret = it->second->getHost();
+        if (!ret.has_value())
+        {
+            ERROR__LOG("没有提供{}服务的节点了", service_name);
+            return std::nullopt;
         }
         return ret;
     }

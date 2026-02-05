@@ -8,7 +8,7 @@
             "name": "C++ Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/ES",
+            "program": "${workspaceFolder}/build/mail_test",
             "args": ["1", "2", "3"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

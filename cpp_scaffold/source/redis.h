@@ -1,3 +1,4 @@
+#pragma once
 #include "logger.h"
 #include <sw/redis++/queued_redis.h>
 #include <sw/redis++/redis.h>

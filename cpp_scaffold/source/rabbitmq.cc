@@ -93,13 +93,23 @@ namespace bubble
     // 接受消息
     void RabbitMQClient::consumeMessage(const std::string &queue, const MessageCallback &callback)
     {
+        std::lock(_declare_mutex, _cond_mutex);
+        std::unique_lock<std::mutex> declare_lock(_declare_mutex, std::adopt_lock);
+        std::unique_lock<std::mutex> cond_lock(_cond_mutex, std::adopt_lock);
         _channel->consume(queue).onReceived([=](const AMQP::Message &message, uint64_t deliveryTag, bool redelivered) {
             callback(message.body(), message.bodySize());
             // 确认消息已被处理
             _channel->ack(deliveryTag);
+            // 通知等待的线程
+            _cond.notify_all();
         }).onError([=](const char *message) {
             ERROR__LOG("Failed to consume queue {}: {}", queue, message);
+            // 通知等待的线程
+            _cond.notify_all();
         });
+
+        // 等待声明完成, 避免虚假唤醒，使用循环检查条件
+        _cond.wait(cond_lock);
     }
 
 
@@ -125,38 +135,36 @@ namespace bubble
         std::string routing_key = is_dlx ? config.dlxRoutingKey() : config.routing_key;
         AMQP::ExchangeType exchange_type = getAMQPExchangeType(config.exchange_type);
 
-        bool done = false;
         // 声明交换机
-        _channel->declareExchange(exchange_name, exchange_type).onSuccess([=, &done]() {
+        _channel->declareExchange(exchange_name, exchange_type).onSuccess([=]() {
             INFO__LOG("Declared Exchange: {}", exchange_name);
             // 声明队列
-            _channel->declareQueue(queue_name, arguments).onSuccess([=, &done]() {
+            _channel->declareQueue(queue_name, arguments).onSuccess([=]() {
                 INFO__LOG("Declared Queue: {}", queue_name);
                 // 绑定交换机和队列
-                _channel->bindQueue(exchange_name, queue_name, routing_key).onSuccess([=, &done]() {
+                _channel->bindQueue(exchange_name, queue_name, routing_key).onSuccess([=]() {
                     INFO__LOG("Bound Exchange {} and Queue {} with Routing Key {}", exchange_name, queue_name, routing_key);
                     // 通知等待的线程
-                    done = true;
                     _cond.notify_all();
-                }).onError([=, &done](const char *message) {
+                }).onError([=](const char *message) {
                     ERROR__LOG("Failed to bind Exchange and Queue: {}", message);
                     // 通知等待的线程
                     _cond.notify_all();
                     abort();
                 });
-            }).onError([=, &done](const char *message) {
+            }).onError([=](const char *message) {
                 ERROR__LOG("Failed to declare Queue: {}", message);
                 _cond.notify_all();
                 abort();
             });
-        }).onError([=, &done](const char *message) {
+        }).onError([=](const char *message) {
             ERROR__LOG("Failed to declare Exchange: {}", message);
             _cond.notify_all();
             abort();
         });
 
         // 等待声明完成, 避免虚假唤醒，使用循环检查条件
-        _cond.wait(cond_lock, [&done]() { return done; });
+        _cond.wait(cond_lock);
     }
 
     void RabbitMQClient::callbackAsyncEv(struct ev_loop *loop, struct ev_async *w, int revents)

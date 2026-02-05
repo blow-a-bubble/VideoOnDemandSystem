@@ -4,6 +4,7 @@
 #include <sstream>
 #include <vector>
 #include <random>
+#include <iomanip>
 namespace bubble
 {
     class Util
@@ -25,5 +26,7 @@ namespace bubble
             };
             // 获取uuid
             static std::string get_uuid(size_t len = 4, UuidType type = MIX);
+            // 生成随机数
+            static int number(int min, int max);
     };
 }

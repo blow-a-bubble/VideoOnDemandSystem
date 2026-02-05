@@ -1,3 +1,0 @@
-/home/dev/workspace/VideoOnDemandSystem/build/CMakeFiles/ES.dir
-/home/dev/workspace/VideoOnDemandSystem/build/CMakeFiles/edit_cache.dir
-/home/dev/workspace/VideoOnDemandSystem/build/CMakeFiles/rebuild_cache.dir

@@ -87,7 +87,9 @@
     // "cmake.sourceDirectory": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/practice/odb/test3",
     // "cmake.sourceDirectory": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/practice/odb/limit",
     // "cmake.sourceDirectory": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/odb/",
-    "cmake.sourceDirectory": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/elastic/",
+    // "cmake.sourceDirectory": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/elastic/",
+    "cmake.sourceDirectory": "/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/mail/",
+
 
     "cmake.ignoreCMakeListsMissing": true,
     //设置默认生成器为 Ninja

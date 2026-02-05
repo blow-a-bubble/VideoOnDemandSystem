@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     // 异步请求
     example::EchoService_Stub stub(channel.get());
     example::EchoRequest *request = new example::EchoRequest();
-    example::EchoResponse *response = new example::EchoResponse()
+    example::EchoResponse *response = new example::EchoResponse();
     brpc::Controller *cntl = new brpc::Controller();
     request->set_message("hello brpc");
     auto cb = [cntl, response, request]() {

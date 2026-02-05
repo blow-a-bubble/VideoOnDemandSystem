@@ -2,6 +2,7 @@
     1. 针对视频文件进行转码，生成转码后的视频文件
     2. 解析生成M3U8文件内容，获取内容结构，并能够生成新的M3U8文件
 */
+#pragma once
 extern "C"
 {
 #include <libavformat/avformat.h>

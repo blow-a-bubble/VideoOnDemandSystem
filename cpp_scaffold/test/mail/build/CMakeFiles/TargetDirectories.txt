@@ -1,0 +1,7 @@
+/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/mail/build/CMakeFiles/mail_test.dir
+/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/mail/build/CMakeFiles/edit_cache.dir
+/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/mail/build/CMakeFiles/rebuild_cache.dir
+/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/mail/build/CMakeFiles/list_install_components.dir
+/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/mail/build/CMakeFiles/install.dir
+/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/mail/build/CMakeFiles/install/local.dir
+/home/dev/workspace/VideoOnDemandSystem/cpp_scaffold/test/mail/build/CMakeFiles/install/strip.dir
